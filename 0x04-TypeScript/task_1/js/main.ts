@@ -4,19 +4,13 @@ export interface Teacher {
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-  [index:string]: any;
+  [index: string]: any;
 }
 
-export interface Directors extends Teacher {
-  numberOfReports: number;
-}
+// Extending the teacher class
 
 export interface printTeacherFunction {
   (firstName: string, lastName: string): string;
-}
-
-export function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName[0]}. ${lastName}`;
 }
 
 export interface IStudentClassConstructor {
@@ -28,6 +22,12 @@ export interface IStudentClass {
   displayName(): string;
 }
 
+//Printing teacher
+export function printTeacher(firstName: string, lastName: string): string {
+  return `${firstName[0]}. ${lastName}`;
+}
+
+//Students class
 export class StudentClass implements IStudentClass {
   private _firstName!: string;
   private _lastName!: string;
@@ -38,7 +38,7 @@ export class StudentClass implements IStudentClass {
   }
 
   workOnHomework() {
-    return 'Currently working';
+    return "Currently working";
   }
 
   displayName() {
@@ -46,6 +46,10 @@ export class StudentClass implements IStudentClass {
   }
 }
 
-export function createStudent(ctor: IStudentClassConstructor, firstName: string, lastName: string): IStudentClass {
+export function createStudent(
+  ctor: IStudentClassConstructor,
+  firstName: string,
+  lastName: string
+): IStudentClass {
   return new ctor(firstName, lastName);
 }
