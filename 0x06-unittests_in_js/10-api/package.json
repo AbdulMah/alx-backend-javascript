@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A simple API for learning basic integration testing in NodeJS.",
   "main": "api.js",
-  "author": "Bezaleel Olakunori <bezaleeloci@gmail.com>",
+  "author": "Abdoul",
   "private": true,
   "license": "MIT",
   "scripts": {
